@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.EtnVegas"
+        tools:targetApi="31">
+        <activity
+            android:name="com.electroneumhackathon.etnvegas.SlotGameResultActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name="com.electroneumhackathon.etnvegas.SlotGameActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name="com.electroneumhackathon.etnvegas.InstructionActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.electroneumhackathon.etnvegas.ChipBuyResultActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.electroneumhackathon.etnvegas.SwapResultActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.electroneumhackathon.etnvegas.SwapTokenActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.EtnVegas" />
+        <activity
+            android:name="com.electroneumhackathon.etnvegas.ReceiveEthActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.electroneumhackathon.etnvegas.SendEthResultActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.electroneumhackathon.etnvegas.SendEtherActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.electroneumhackathon.etnvegas.GenericErrorActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.electroneumhackathon.etnvegas.LoginActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.electroneumhackathon.etnvegas.KeyGenerationActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.electroneumhackathon.etnvegas.RealLoginSignupButtonActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.electroneumhackathon.etnvegas.LoginSignupButtonActivity"
+            android:exported="true"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.electroneumhackathon.etnvegas.MainActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
+    </application>
+
+</manifest>

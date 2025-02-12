@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.starconsolidate.cryptoslots.com.electroneumhackathon.etnvegas.SwapTokenActivity">
+
+    <TextView
+        android:id="@+id/swap_token_heading_text_view"
+        android:layout_width="296dp"
+        android:layout_height="52dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="10dp"
+        android:fontFamily="@font/marko_one"
+        android:gravity="center"
+        android:text="Swap CHIP"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/network_name_arb"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/slot_gradient_layout_background"
+        android:fontFamily="@font/marko_one"
+        android:gravity="center"
+        android:text="🌐  Network: Electroneum Testnet"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/swap_token_heading_text_view" />
+
+    <LinearLayout
+        android:id="@+id/swap_linear_layout"
+        android:layout_width="327dp"
+        android:layout_height="51dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="10dp"
+        android:background="@drawable/edit_text_box"
+        android:orientation="horizontal"
+        android:paddingEnd="5sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/network_name_arb">
+
+        <EditText
+            android:id="@+id/swap_chip_amount"
+            android:layout_width="261dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@android:color/transparent"
+            android:ems="10"
+            android:fontFamily="@font/lustria"
+            android:hint="Chips Amount"
+            android:inputType="number"
+            android:padding="5sp"
+            android:scrollHorizontally="true"
+            android:textColor="@color/black"
+            android:textColorHint="#666666"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textView9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="2sp"
+            android:layout_weight="1"
+            android:fontFamily="@font/lustria"
+            android:gravity="start"
+            android:text="CHIP"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/max_chip_balance_show"
+        android:layout_width="324dp"
+        android:layout_height="29dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="10dp"
+        android:fontFamily="@font/lustria"
+        android:textColor="#7B1FA2"
+        android:textStyle="bold"
+        android:text="max 20000 CHIPS"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/swap_linear_layout" />
+
+    <ImageView
+        android:id="@+id/swap_image"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/max_chip_balance_show"
+        app:srcCompat="@drawable/swap_icon" />
+
+    <TextView
+        android:id="@+id/max_eth_value_received"
+        android:layout_width="327dp"
+        android:layout_height="51dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="10dp"
+        android:background="@drawable/edit_text_box"
+        android:ems="10"
+        android:fontFamily="@font/lustria"
+        android:gravity="center_vertical"
+        android:padding="5sp"
+        android:text="0 ETN"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/swap_image" />
+
+    <TextView
+        android:id="@+id/chip_price_per_unit"
+        android:layout_width="324dp"
+        android:layout_height="29dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="10dp"
+        android:fontFamily="@font/lustria"
+        android:textColor="#7B1FA2"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/max_eth_value_received" />
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/fetch_lottie_animation"
+        android:layout_width="156dp"
+        android:layout_height="71dp"
+        android:layout_marginBottom="5dp"
+        app:layout_constraintBottom_toTopOf="@+id/swap_chips_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/loader" />
+
+
+    <Button
+        android:id="@+id/swap_chips_button"
+        android:layout_width="343dp"
+        android:layout_height="69dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginBottom="25dp"
+        android:backgroundTint="#00FF00"
+        android:enabled="false"
+        android:fontFamily="@font/marko_one"
+        android:text="Swap"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

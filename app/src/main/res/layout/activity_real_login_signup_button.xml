@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient_background"
+    tools:context="com.starconsolidate.cryptoslots.com.electroneumhackathon.etnvegas.RealLoginSignupButtonActivity">
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/lustria"
+        android:gravity="center"
+        android:text="ETN Vegas"
+        android:textColor="#FFFFFF"
+        android:textColorLink="#03A9F4"
+        android:textSize="34sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="wrap_content"
+        android:layout_height="64dp"
+        android:layout_marginBottom="15dp"
+        app:layout_constraintBottom_toTopOf="@+id/textView1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/slot_machine" />
+
+    <Button
+        android:id="@+id/signup"
+        android:layout_width="281dp"
+        android:layout_height="71dp"
+        android:layout_marginTop="40dp"
+        android:backgroundTint="#00FF7EB3"
+        android:fontFamily="@font/marko_one"
+        android:hapticFeedbackEnabled="true"
+        android:text="Sign Up"
+        android:textColorLink="#FFEB3B"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView1"
+        app:strokeColor="#FFFFFF"
+        app:strokeWidth="1dp" />
+
+    <Button
+        android:id="@+id/login"
+        android:layout_width="281dp"
+        android:layout_height="71dp"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="#FFFFFF"
+        android:fontFamily="@font/marko_one"
+        android:text="Login"
+        android:textColor="#ff758c"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/signup" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

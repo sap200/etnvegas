@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient_background"
+    tools:context="com.starconsolidate.cryptoslots.com.electroneumhackathon.etnvegas.SlotGameActivity">
+
+
+    <TextView
+        android:id="@+id/header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/marko_one"
+        android:text="Slot Game"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Slot Reels -->
+
+    <TextView
+        android:id="@+id/balance_view"
+        android:layout_width="241dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:fontFamily="@font/lustria"
+        android:gravity="center"
+        android:text="🪙 Balance : 0 CHIP"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/header" />
+
+    <LinearLayout
+        android:id="@+id/slotContainer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/slot_gradient_layout_background"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/balance_view">
+
+        <!-- Slot Reels Placeholder -->
+        <com.electroneumhackathon.etnvegas.SlotReelView
+            android:id="@+id/slot1"
+            android:layout_width="100dp"
+            android:layout_height="150dp"
+            android:layout_margin="10dp"
+            android:background="@drawable/slot_background" />
+
+        <com.electroneumhackathon.etnvegas.SlotReelView
+            android:id="@+id/slot2"
+            android:layout_width="100dp"
+            android:layout_height="150dp"
+            android:layout_margin="10dp"
+            android:background="@drawable/slot_background" />
+
+        <com.electroneumhackathon.etnvegas.SlotReelView
+            android:id="@+id/slot3"
+            android:layout_width="100dp"
+            android:layout_height="150dp"
+            android:layout_margin="10dp"
+            android:background="@drawable/slot_background" />
+
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/bet_chip_amount_text"
+        android:layout_width="298dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="10dp"
+        android:background="@drawable/edit_text_box"
+        android:ems="10"
+        android:fontFamily="@font/lustria"
+        android:gravity="center"
+        android:hint="Amount of chips to bet"
+        android:inputType="number"
+        android:textColor="#000000"
+        android:textColorHint="#666666"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/slotContainer" />
+
+    <TextView
+        android:id="@+id/error_message"
+        android:layout_width="351dp"
+        android:layout_height="23dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginEnd="10dp"
+        android:background="@drawable/edit_text_box"
+        android:backgroundTint="#FFFFFF"
+        android:fontFamily="@font/marko_one"
+        android:gravity="center"
+        android:padding="5dp"
+        android:text="Note: Please do not quit this screen while spinning"
+        android:textColor="#FF0000"
+        android:textSize="10sp"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bet_chip_amount_text" />
+
+    <Button
+        android:id="@+id/spinButton"
+        android:layout_width="165dp"
+        android:layout_height="61dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:backgroundTint="#FFFFFF"
+        android:enabled="false"
+        android:fontFamily="@font/marko_one"
+        android:text="Bet and Spin"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/error_message" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="350dp"
+        android:layout_height="54dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:background="@drawable/edit_text_box"
+        android:fontFamily="@font/marko_one"
+        android:gravity="center"
+        android:padding="5dp"
+        android:text="Note: Please do not quit this screen while spinning"
+        android:textColor="#FF0000"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spinButton" />
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/fetch_lottie_animation_1"
+        android:layout_width="156dp"
+        android:layout_height="71dp"
+        android:layout_marginBottom="5dp"
+        app:layout_constraintBottom_toTopOf="@+id/go_to_wallet"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/loader" />
+
+    <Button
+        android:id="@+id/go_to_wallet"
+        android:layout_width="250dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginBottom="5dp"
+        android:backgroundTint="@android:color/transparent"
+        android:fontFamily="@font/marko_one"
+        android:text="Go to Wallet"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:strokeColor="#FAFAFA"
+        app:strokeWidth="2dp" />
+
+    <!-- Header -->
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

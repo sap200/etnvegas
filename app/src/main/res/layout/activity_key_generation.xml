@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient_background"
+    android:padding="10dp"
+    tools:context="com.starconsolidate.cryptoslots.com.electroneumhackathon.etnvegas.KeyGenerationActivity">
+
+    <TextView
+        android:id="@+id/chip_balance"
+        android:layout_width="340dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="10dp"
+        android:fontFamily="@font/marko_one"
+        android:gravity="center"
+        android:text="Your Private Key (Keep It Safe!)"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.616"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="340dp"
+        android:layout_height="110dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="10dp"
+        android:fontFamily="@font/bona_nova"
+        android:gravity="center|start"
+        android:padding="10dp"
+        android:text="This is your private key. It provides full access to your wallet. Do NOT share it with anyone. If lost, your wallet cannot be recovered."
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.615"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/chip_balance" />
+
+    <TextView
+        android:id="@+id/private_key_text"
+        android:layout_width="340dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="10dp"
+        android:background="#FFFFFF"
+        android:fontFamily="@font/bona_nova"
+        android:gravity="center|start"
+        android:padding="3dp"
+        android:shadowColor="#303F9F"
+        android:textColor="#212121"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="340dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:fontFamily="@font/bona_nova"
+        android:gravity="center"
+        android:padding="3dp"
+        android:text="Tap on the red bar to copy your private key to the clipboard"
+        android:textAlignment="textStart"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        android:textStyle="bold|italic"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/private_key_text" />
+
+    <Button
+        android:id="@+id/proceed"
+        android:layout_width="340dp"
+        android:layout_height="71dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="10dp"
+        android:backgroundTint="#FFFFFF"
+        android:fontFamily="@font/marko_one"
+        android:text="Proceed"
+        android:textColor="#ff758c"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.615"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView5" />
+
+    <!-- TextView to display the private key -->
+
+    <!-- Button to copy the private key -->
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,565 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:background="@drawable/gradient_background"
+    tools:context="com.starconsolidate.cryptoslots.com.electroneumhackathon.etnvegas.BuyChipFragment">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true"
+        android:background="@drawable/gradient_background">
+
+        <!-- First TextView -->
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:fontFamily="@font/marko_one"
+            android:text="CHIP Shop"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/fetch_lottie_animation_2"
+            android:layout_width="156dp"
+            android:layout_height="50dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView1"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true"
+            app:lottie_rawRes="@raw/loader" />
+
+        <!-- Second TextView -->
+        <TextView
+            android:id="@+id/chip_balance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:fontFamily="@font/marko_one"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textView1" />
+
+        <ScrollView
+            android:id="@+id/scrollView"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:fillViewport="true"
+            android:isScrollContainer="true"
+            android:nestedScrollingEnabled="true"
+            android:overScrollMode="always"
+            android:scrollbars="none"
+            android:paddingBottom="100dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/chip_balance">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp"
+                android:weightSum="1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <!-- Row 1 -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="8dp"
+                    android:orientation="horizontal"
+                    android:weightSum="2">
+
+                    <!-- First Card -->
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/card_1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="15dp"
+                        android:layout_weight="1"
+                        android:elevation="4dp"
+                        android:radius="8dp"
+                        app:cardCornerRadius="8dp"
+                        app:cardElevation="4dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_horizontal"
+                            android:orientation="vertical"
+                            android:paddingTop="10dp"
+                            android:paddingBottom="10dp">
+
+                            <!-- Image inside the card -->
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="50dp"
+                                android:scaleType="fitCenter"
+                                android:src="@drawable/casino_chip_1" />
+
+                            <!-- Title TextView -->
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="8dp"
+                                android:layout_marginBottom="8dp"
+                                android:background="@drawable/strip_background"
+                                android:fontFamily="@font/marko_one"
+                                android:gravity="center"
+                                android:text="5 CHIP"
+                                android:textColor="@color/white"
+                                android:textSize="18sp"
+                                android:textStyle="bold" />
+
+                            <!-- Description TextView -->
+                            <TextView
+                                android:layout_width="142dp"
+                                android:layout_height="35dp"
+                                android:layout_marginTop="4dp"
+                                android:background="@drawable/eth_price_strip"
+                                android:fontFamily="@font/marko_one"
+                                android:gravity="center"
+                                android:text="0.01 ETN"
+                                android:textColor="#7B1FA2"
+                                android:textSize="14sp" />
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+
+                    <!-- Second Card -->
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/card_2"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:elevation="4dp"
+                        android:radius="8dp"
+                        app:cardCornerRadius="8dp"
+                        app:cardElevation="4dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_horizontal"
+                            android:orientation="vertical"
+                            android:paddingTop="10dp"
+                            android:paddingBottom="10dp">
+
+                            <!-- Image inside the card -->
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="50dp"
+                                android:scaleType="fitCenter"
+                                android:src="@drawable/casino_chip_1" />
+
+                            <!-- Title TextView -->
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="8dp"
+                                android:layout_marginBottom="8dp"
+                                android:background="@drawable/strip_background"
+                                android:fontFamily="@font/marko_one"
+                                android:gravity="center"
+                                android:text="20 CHIP"
+                                android:textColor="@color/white"
+                                android:textSize="18sp"
+                                android:textStyle="bold" />
+
+                            <!-- Description TextView -->
+                            <TextView
+                                android:layout_width="142dp"
+                                android:layout_height="35dp"
+                                android:layout_marginTop="4dp"
+                                android:background="@drawable/eth_price_strip"
+                                android:fontFamily="@font/marko_one"
+                                android:gravity="center"
+                                android:text="0.04 ETN"
+                                android:textColor="#7B1FA2"
+                                android:textSize="14sp" />
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+                </LinearLayout>
+
+                <!-- Row 2 -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="8dp"
+                    android:orientation="horizontal"
+                    android:weightSum="2">
+
+                    <!-- Third Card -->
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/card_3"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="15dp"
+                        android:layout_weight="1"
+                        android:elevation="4dp"
+                        android:radius="8dp"
+                        app:cardCornerRadius="8dp"
+                        app:cardElevation="4dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_horizontal"
+                            android:orientation="vertical"
+                            android:paddingTop="10dp"
+                            android:paddingBottom="10dp">
+
+                            <!-- Image inside the card -->
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="50dp"
+                                android:scaleType="fitCenter"
+                                android:src="@drawable/casino_chip_2" />
+
+                            <!-- Title TextView -->
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="8dp"
+                                android:layout_marginBottom="8dp"
+                                android:background="@drawable/strip_background"
+                                android:fontFamily="@font/marko_one"
+                                android:gravity="center"
+                                android:text="50 CHIP"
+                                android:textColor="@color/white"
+                                android:textSize="18sp"
+                                android:textStyle="bold" />
+
+                            <!-- Description TextView -->
+                            <TextView
+                                android:layout_width="142dp"
+                                android:layout_height="35dp"
+                                android:layout_marginTop="4dp"
+                                android:background="@drawable/eth_price_strip"
+                                android:fontFamily="@font/marko_one"
+                                android:gravity="center"
+                                android:text="0.1 ETN"
+                                android:textColor="#7B1FA2"
+                                android:textSize="14sp" />
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+
+                    <!-- Fourth Card -->
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/card_4"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:elevation="4dp"
+                        android:radius="8dp"
+                        app:cardCornerRadius="8dp"
+                        app:cardElevation="4dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_horizontal"
+                            android:orientation="vertical"
+                            android:paddingTop="10dp"
+                            android:paddingBottom="10dp">
+
+                            <!-- Image inside the card -->
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="50dp"
+                                android:scaleType="fitCenter"
+                                android:src="@drawable/casino_chip_2" />
+
+                            <!-- Title TextView -->
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="8dp"
+                                android:layout_marginBottom="8dp"
+                                android:background="@drawable/strip_background"
+                                android:fontFamily="@font/marko_one"
+                                android:gravity="center"
+                                android:text="100 CHIP"
+                                android:textColor="@color/white"
+                                android:textSize="18sp"
+                                android:textStyle="bold" />
+
+                            <!-- Description TextView -->
+                            <TextView
+                                android:layout_width="142dp"
+                                android:layout_height="35dp"
+                                android:layout_marginTop="4dp"
+                                android:background="@drawable/eth_price_strip"
+                                android:fontFamily="@font/marko_one"
+                                android:gravity="center"
+                                android:text="0.2 ETN"
+                                android:textColor="#7B1FA2"
+                                android:textSize="14sp" />
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+                </LinearLayout>
+
+
+                <!-- Row 3 -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="8dp"
+                    android:orientation="horizontal"
+                    android:weightSum="2">
+
+                    <!-- Fifth Card -->
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/card_5"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="15dp"
+                        android:layout_weight="1"
+                        android:elevation="4dp"
+                        android:radius="8dp"
+                        app:cardCornerRadius="8dp"
+                        app:cardElevation="4dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_horizontal"
+                            android:orientation="vertical"
+                            android:paddingTop="10dp"
+                            android:paddingBottom="10dp">
+
+                            <!-- Image inside the card -->
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="50dp"
+                                android:scaleType="fitCenter"
+                                android:src="@drawable/casino_chip_3" />
+
+                            <!-- Title TextView -->
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="8dp"
+                                android:layout_marginBottom="8dp"
+                                android:background="@drawable/strip_background"
+                                android:fontFamily="@font/marko_one"
+                                android:gravity="center"
+                                android:text="250 CHIP"
+                                android:textColor="@color/white"
+                                android:textSize="18sp"
+                                android:textStyle="bold" />
+
+                            <!-- Description TextView -->
+                            <TextView
+                                android:layout_width="142dp"
+                                android:layout_height="35dp"
+                                android:layout_marginTop="4dp"
+                                android:background="@drawable/eth_price_strip"
+                                android:fontFamily="@font/marko_one"
+                                android:gravity="center"
+                                android:text="0.5 ETN"
+                                android:textColor="#7B1FA2"
+                                android:textSize="14sp" />
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+
+                    <!-- Sixth Card -->
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/card_6"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:elevation="4dp"
+                        android:radius="8dp"
+                        app:cardCornerRadius="8dp"
+                        app:cardElevation="4dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_horizontal"
+                            android:orientation="vertical"
+                            android:paddingTop="10dp"
+                            android:paddingBottom="10dp">
+
+                            <!-- Image inside the card -->
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="50dp"
+                                android:scaleType="fitCenter"
+                                android:src="@drawable/casino_chip_3" />
+
+                            <!-- Title TextView -->
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="8dp"
+                                android:layout_marginBottom="8dp"
+                                android:background="@drawable/strip_background"
+                                android:fontFamily="@font/marko_one"
+                                android:gravity="center"
+                                android:text="500 CHIP"
+                                android:textColor="@color/white"
+                                android:textSize="18sp"
+                                android:textStyle="bold" />
+
+                            <!-- Description TextView -->
+                            <TextView
+                                android:layout_width="142dp"
+                                android:layout_height="35dp"
+                                android:layout_marginTop="4dp"
+                                android:background="@drawable/eth_price_strip"
+                                android:fontFamily="@font/marko_one"
+                                android:gravity="center"
+                                android:text="1 ETN"
+                                android:textColor="#7B1FA2"
+                                android:textSize="14sp" />
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+                </LinearLayout>
+
+                <!-- Row 4 -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="8dp"
+                    android:orientation="horizontal"
+                    android:weightSum="2">
+
+                    <!-- Seventh Card -->
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/card_7"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="15dp"
+                        android:layout_weight="1"
+                        android:elevation="4dp"
+                        android:radius="8dp"
+                        app:cardCornerRadius="8dp"
+                        app:cardElevation="4dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_horizontal"
+                            android:orientation="vertical"
+                            android:paddingTop="10dp"
+                            android:paddingBottom="10dp">
+
+                            <!-- Image inside the card -->
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="50dp"
+                                android:scaleType="fitCenter"
+                                android:src="@drawable/casino_chip_4" />
+
+                            <!-- Title TextView -->
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="8dp"
+                                android:layout_marginBottom="8dp"
+                                android:background="@drawable/strip_background"
+                                android:fontFamily="@font/marko_one"
+                                android:gravity="center"
+                                android:text="1000 CHIP"
+                                android:textColor="@color/white"
+                                android:textSize="18sp"
+                                android:textStyle="bold" />
+
+                            <!-- Description TextView -->
+                            <TextView
+                                android:layout_width="142dp"
+                                android:layout_height="35dp"
+                                android:layout_marginTop="4dp"
+                                android:background="@drawable/eth_price_strip"
+                                android:fontFamily="@font/marko_one"
+                                android:gravity="center"
+                                android:text="2 ETN"
+                                android:textColor="#7B1FA2"
+                                android:textSize="14sp" />
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+
+                    <!-- Eighth Card -->
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/card_8"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:elevation="4dp"
+                        android:radius="8dp"
+                        app:cardCornerRadius="8dp"
+                        app:cardElevation="4dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_horizontal"
+                            android:orientation="vertical"
+                            android:paddingTop="10dp"
+                            android:paddingBottom="10dp">
+
+                            <!-- Image inside the card -->
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="50dp"
+                                android:scaleType="fitCenter"
+                                android:src="@drawable/casino_chip_4" />
+
+                            <!-- Title TextView -->
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="8dp"
+                                android:layout_marginBottom="8dp"
+                                android:background="@drawable/strip_background"
+                                android:fontFamily="@font/marko_one"
+                                android:gravity="center"
+                                android:text="Customized"
+                                android:textColor="@color/white"
+                                android:textSize="18sp"
+                                android:textStyle="bold" />
+
+                            <!-- Description TextView -->
+                            <TextView
+                                android:layout_width="142dp"
+                                android:layout_height="35dp"
+                                android:layout_marginTop="4dp"
+                                android:background="@drawable/eth_price_strip"
+                                android:fontFamily="@font/marko_one"
+                                android:gravity="center"
+                                android:text="Customize"
+                                android:textColor="#7B1FA2"
+                                android:textSize="14sp"
+                                android:visibility="invisible" />
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+                </LinearLayout>
+
+            </LinearLayout>
+        </ScrollView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+</FrameLayout>

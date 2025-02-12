@@ -1,0 +1,22 @@
+<resources>
+    <style name="BottomNavTextAppearance" parent="TextAppearance.AppCompat">
+        <item name="android:textSize">16sp</item> <!-- Adjust the size here -->
+        <item name="android:textColor">@android:color/white</item> <!-- Optional -->
+        <item name="android:fontFamily">@font/marko_one</item> <!-- Optional -->
+    </style>
+
+    <style name="CustomBottomNavTheme" parent="Widget.MaterialComponents.BottomNavigationView">
+        <!-- Ensure no ripple effect or default rectangle -->
+        <item name="itemRippleColor">@null</item>
+    </style>
+
+    <style name="CustomItemActiveIndicatorStyle" parent="Widget.Material3.BottomNavigationView.ActiveIndicator">
+    </style>
+
+    <style name="ShapeAppearanceOverlay.App.rounded" parent="">
+        <item name="cornerSize">25%</item>
+    </style>
+
+
+
+</resources>

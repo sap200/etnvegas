@@ -1,0 +1,27 @@
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_checked="true">
+        <!-- Selected Item Background with a Darker Gradient and Smaller Height -->
+        <shape xmlns:android="http://schemas.android.com/apk/res/android">
+            <gradient
+                android:startColor="#ff4f6a"
+                android:centerColor="#e63450"
+                android:endColor="#d2264b"
+                android:angle="180" />
+            <corners android:topRightRadius="12dp" /> <!-- Border radius only on top-right corner -->
+            <size
+                android:width="56dp"
+            android:height="36dp" />  <!-- Set a fixed height for the background -->
+        </shape>
+    </item>
+
+    <item android:state_checked="false">
+        <!-- Unselected Item Background (Transparent) -->
+        <shape xmlns:android="http://schemas.android.com/apk/res/android">
+            <solid android:color="@android:color/transparent" />
+            <corners android:topRightRadius="12dp" /> <!-- Border radius only on top-right corner -->
+            <size
+                android:width="56dp"
+            android:height="36dp" />  <!-- Set a fixed height for the background -->
+        </shape>
+    </item>
+</selector>

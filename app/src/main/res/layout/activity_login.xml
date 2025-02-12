@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient_background"
+    tools:context="com.starconsolidate.cryptoslots.com.electroneumhackathon.etnvegas.LoginActivity">
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="340dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="10dp"
+        android:fontFamily="@font/lustria"
+        android:gravity="center"
+        android:text="Login"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/inp_private_key"
+        android:layout_width="340dp"
+        android:layout_height="160dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="10dp"
+        android:background="@drawable/edit_text_box"
+        android:ems="10"
+        android:fontFamily="@font/marko_one"
+        android:gravity="start|top"
+        android:hint="Enter your private key here"
+        android:inputType="textMultiLine"
+        android:padding="5sp"
+        android:textColor="#000000"
+        android:textColorHint="#666666"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+
+    <Button
+        android:id="@+id/login_proceed"
+        android:layout_width="340dp"
+        android:layout_height="71dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="10dp"
+        android:backgroundTint="#FFFFFF"
+        android:fontFamily="@font/marko_one"
+        android:text="Proceed"
+        android:textColor="#ff758c"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/inp_private_key" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
