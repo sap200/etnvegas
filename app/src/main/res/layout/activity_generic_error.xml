@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:layout_gravity="center"
     android:backgroundTint="#FBC02D"
-    tools:context="com.starconsolidate.cryptoslots.com.electroneumhackathon.etnvegas.GenericErrorActivity">
+    tools:context="com.electroneumhackathon.etnvegas.GenericErrorActivity">
 
     <ImageView
         android:id="@+id/imageView"

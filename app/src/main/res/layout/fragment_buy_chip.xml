@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:layout_gravity="center"
     android:background="@drawable/gradient_background"
-    tools:context="com.starconsolidate.cryptoslots.com.electroneumhackathon.etnvegas.BuyChipFragment">
+    tools:context="com.electroneumhackathon.etnvegas.BuyChipFragment">
 
 
     <androidx.constraintlayout.widget.ConstraintLayout

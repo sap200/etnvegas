@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/gradient_background"
     android:padding="10dp"
-    tools:context="com.starconsolidate.cryptoslots.com.electroneumhackathon.etnvegas.KeyGenerationActivity">
+    tools:context="com.electroneumhackathon.etnvegas.KeyGenerationActivity">
 
     <TextView
         android:id="@+id/chip_balance"

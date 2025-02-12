@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.starconsolidate.cryptoslots.com.electroneumhackathon.etnvegas.SwapTokenActivity">
+    tools:context="com.electroneumhackathon.etnvegas.SwapTokenActivity">
 
     <TextView
         android:id="@+id/swap_token_heading_text_view"
@@ -163,7 +163,7 @@
         android:layout_marginStart="15dp"
         android:layout_marginEnd="15dp"
         android:layout_marginBottom="25dp"
-        android:backgroundTint="#00FF00"
+        android:backgroundTint="#7BFF08"
         android:enabled="false"
         android:fontFamily="@font/marko_one"
         android:text="Swap"

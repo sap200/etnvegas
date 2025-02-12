@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.starconsolidate.cryptoslots.com.electroneumhackathon.etnvegas.SlotGameResultActivity">
+    tools:context="com.electroneumhackathon.etnvegas.SlotGameResultActivity">
 
     <com.airbnb.lottie.LottieAnimationView
         android:id="@+id/game_status_lottie_animation"

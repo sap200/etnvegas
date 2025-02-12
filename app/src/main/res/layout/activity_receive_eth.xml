@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:layout_gravity="center"
     app:layout_anchorGravity="center"
-    tools:context="com.starconsolidate.cryptoslots.com.electroneumhackathon.etnvegas.ReceiveEthActivity">
+    tools:context="com.electroneumhackathon.etnvegas.ReceiveEthActivity">
 
     <TextView
         android:id="@+id/textView10"

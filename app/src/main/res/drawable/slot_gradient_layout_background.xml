@@ -5,9 +5,9 @@
     <!-- Gradient background -->
     <!-- Gradient Background -->
     <gradient
-        android:startColor="#4158D0"
-    android:centerColor="#C850C0"
-    android:endColor="#FFCC70"
+        android:startColor="#a770ef"
+    android:centerColor="#cf8bf3"
+    android:endColor="#fdb99b"
     android:angle="135" />
 
     <!-- Stroke (border) -->

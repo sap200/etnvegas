@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/gradient_background"
-    tools:context="com.starconsolidate.cryptoslots.com.electroneumhackathon.etnvegas.RealLoginSignupButtonActivity">
+    tools:context="com.electroneumhackathon.etnvegas.RealLoginSignupButtonActivity">
 
     <TextView
         android:id="@+id/textView1"
