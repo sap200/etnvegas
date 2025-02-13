@@ -3,6 +3,7 @@ package cryptooperations;
 import org.web3j.abi.EventValues;
 import org.web3j.abi.FunctionEncoder;
 import org.web3j.abi.datatypes.Address;
+import org.web3j.abi.datatypes.Uint;
 import org.web3j.abi.datatypes.generated.Uint256;
 import org.web3j.crypto.Credentials;
 import org.web3j.crypto.RawTransaction;
@@ -391,6 +392,68 @@ public class MyWeb3Client {
             gameResult[4] = ERROR_OCCURED;
             gameResult[5] = Utility.extractTxHashFromErrorMessage(ex.getMessage());
             gameResult[6] = Utility.processTransactionFailure(ex.getMessage());
+        }
+        return gameResult;
+    }
+
+    public String[] spinTheWheel(BigInteger betAmount, BigInteger choice) {
+        String[] gameResult = new String[5];
+
+        try {
+            Random random = new Random();
+
+            // Generate BigIntegers of a specific bit length
+            BigInteger src1 = new BigInteger(43, random); // 50-bit random BigInteger
+            // get gas Limit and price
+            BigInteger gasPrice = getGasPrice();
+            Transaction tx = Transaction.createFunctionCallTransaction(keyGenerator.getAddress(), null, null, null, CONTRACT_ADDRESS,  BigInteger.ZERO, etnvegas.spinTheWheel(betAmount, choice, src1).encodeFunctionCall());
+            BigInteger gasLimit = predictGasLimit(tx);
+            etnvegas.setGasProvider(new StaticGasProvider(gasPrice, gasLimit));
+
+            TransactionReceipt txnReceipt = etnvegas.spinTheWheel(betAmount, choice, src1).send();
+            if(!txnReceipt.isStatusOK()) {
+                // error
+                System.out.println("INSIDE TXN RECEIPT: " + txnReceipt);
+
+                gameResult[2] = ERROR_OCCURED;
+                gameResult[3] = txnReceipt.getTransactionHash();
+                gameResult[4] = txnReceipt.getRevertReason();
+                return gameResult;
+            } else {
+                // success
+                List<Log> logs = txnReceipt.getLogs();
+                for (Log log : logs) {
+                    // Extract event parameters for the specific event
+                    EventValues eventValues = etnvegas.staticExtractEventParameters(
+                            etnvegas.SPINRESULTOUT_EVENT, log
+                    );
+
+                    if(eventValues != null) {
+                        Address player = (Address) eventValues.getIndexedValues().get(0);
+                        Uint256 returnedChoice = (Uint256) eventValues.getNonIndexedValues().get(0);
+                        Uint256 returnedResult = (Uint256) eventValues.getNonIndexedValues().get(1);
+
+
+                        gameResult[0] = returnedChoice.getValue().toString();
+                        gameResult[1] = returnedResult.getValue().toString();
+                        gameResult[2] = "";
+                        gameResult[3] = txnReceipt.getTransactionHash();
+                        gameResult[4] = "";
+                        break;
+                    }
+
+                    return gameResult;
+
+                }
+
+            }
+
+        } catch(Exception ex) {
+            ex.printStackTrace();
+            System.out.println(ex.getMessage());
+            gameResult[2] = ERROR_OCCURED;
+            gameResult[3] = Utility.extractTxHashFromErrorMessage(ex.getMessage());
+            gameResult[4] = Utility.processTransactionFailure(ex.getMessage());
         }
         return gameResult;
     }

@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient_background"
+    tools:context=".PlayFortuneWheelGame">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center|top"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:id="@+id/fortune_header"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/marko_one"
+                android:text="Fortune Wheel"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <!-- Slot Reels -->
+
+            <TextView
+                android:id="@+id/fortune_balance_view"
+                android:layout_width="241dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:fontFamily="@font/lustria"
+                android:gravity="center"
+                android:text="🪙 Balance : 0 CHIP"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/ivTarget"
+                android:layout_width="20dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="-40dp"
+                android:backgroundTint="#7B1FA2"
+                android:scaleType="fitXY"
+                android:translationZ="10dp"
+                app:srcCompat="@drawable/target" />
+
+            <ImageView
+                android:id="@+id/ivWheel"
+                android:layout_width="250dp"
+                android:layout_height="250dp"
+                android:rotation="17"
+                app:srcCompat="@drawable/wheel" />
+
+
+            <EditText
+                android:id="@+id/bet_chip_on_fortune_wheel"
+                android:layout_width="298dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="10dp"
+                android:background="@drawable/edit_text_box"
+                android:ems="10"
+                android:fontFamily="@font/lustria"
+                android:gravity="center"
+                android:hint="Amount of chips to bet"
+                android:inputType="number"
+                android:textColor="#000000"
+                android:textColorHint="#666666"
+                android:textStyle="bold"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ivWheel" />
+
+            <EditText
+                android:id="@+id/choice_number"
+                android:layout_width="298dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="10dp"
+                android:background="@drawable/edit_text_box"
+                android:ems="10"
+                android:fontFamily="@font/lustria"
+                android:gravity="center"
+                android:hint="Guess number"
+                android:inputType="number"
+                android:max="10"
+                android:min="1"
+                android:textColor="#000000"
+                android:textColorHint="#666666"
+                android:textStyle="bold"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/bet_chip_on_fortune_wheel" />
+
+            <TextView
+                android:id="@+id/display_error_message"
+                android:layout_width="351dp"
+                android:layout_height="23dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="2dp"
+                android:layout_marginEnd="10dp"
+                android:background="@drawable/edit_text_box"
+                android:backgroundTint="#FFFFFF"
+                android:fontFamily="@font/marko_one"
+                android:gravity="center"
+                android:padding="5dp"
+                android:text="Note: Please do not quit this screen while spinning"
+                android:textColor="#FF0000"
+                android:textSize="10sp"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/choice_number" />
+
+            <Button
+                android:id="@+id/bet_and_spin_button"
+                android:layout_width="165dp"
+                android:layout_height="61dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:backgroundTint="#FFFFFF"
+                android:enabled="false"
+                android:fontFamily="@font/marko_one"
+                android:text="Bet and Spin"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/display_error_message" />
+
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/fetch_balance_animation_2"
+                android:layout_width="156dp"
+                android:layout_height="71dp"
+                android:layout_marginBottom="5dp"
+                app:layout_constraintBottom_toTopOf="@+id/go_to_wallet_from_wheel"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:lottie_autoPlay="true"
+                app:lottie_loop="true"
+                app:lottie_rawRes="@raw/loader" />
+
+
+            <TextView
+                android:id="@+id/warning_message"
+                android:layout_width="350dp"
+                android:layout_height="54dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:background="@drawable/edit_text_box"
+                android:fontFamily="@font/marko_one"
+                android:gravity="center"
+                android:padding="5dp"
+                android:text="Note: Please do not quit this screen while spinning"
+                android:textColor="#FF0000"
+                android:textSize="12sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/bet_and_spin_button" />
+
+            <Button
+                android:id="@+id/go_to_wallet_from_wheel"
+                android:layout_width="250dp"
+                android:layout_height="60dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginBottom="5dp"
+                android:backgroundTint="@android:color/transparent"
+                android:fontFamily="@font/marko_one"
+                android:text="Go to Wallet"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:strokeColor="#FAFAFA"
+                app:strokeWidth="2dp" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

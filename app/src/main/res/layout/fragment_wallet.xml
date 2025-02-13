@@ -109,56 +109,65 @@
                 android:layout_width="100dp"
                 android:layout_height="80dp"
                 android:layout_marginRight="8dp"
-                android:backgroundTint="#EDE5E5"
+                android:backgroundTint="#FFFFFF"
                 android:enabled="false"
                 android:fontFamily="@font/marko_one"
                 android:text="Send"
                 android:textColor="#000000"
                 android:textSize="12sp"
                 android:textStyle="bold"
+                app:elevation="4dp"
                 app:icon="@drawable/ic_send"
                 app:iconGravity="textTop"
                 app:iconPadding="8dp"
                 app:iconSize="20dp"
                 app:iconTint="@null"
-                app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.rounded" />
+                app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.rounded"
+                app:strokeColor="#C63FFF"
+                app:strokeWidth="2dp" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/wallet_receive_button"
                 android:layout_width="100dp"
                 android:layout_height="80dp"
                 android:layout_marginRight="8dp"
-                android:backgroundTint="#EDE5E5"
+                android:backgroundTint="#FFFFFF"
                 android:enabled="false"
                 android:fontFamily="@font/marko_one"
                 android:text="Receive"
                 android:textColor="#000000"
                 android:textSize="12sp"
                 android:textStyle="bold"
+                app:elevation="4dp"
                 app:icon="@drawable/ic_receive"
                 app:iconGravity="textTop"
                 app:iconPadding="8dp"
                 app:iconSize="20dp"
                 app:iconTint="@null"
-                app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.rounded" />
+                app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.rounded"
+                app:strokeColor="#C63FFF"
+                app:strokeWidth="2dp" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/wallet_swap_button"
                 android:layout_width="100dp"
                 android:layout_height="80dp"
-                android:backgroundTint="#EDE5E5"
+                android:backgroundTint="#FFFFFF"
                 android:enabled="false"
                 android:fontFamily="@font/marko_one"
                 android:text="Swap"
                 android:textColor="#000000"
                 android:textSize="12sp"
                 android:textStyle="bold"
+                app:elevation="4dp"
                 app:icon="@drawable/ic_exchange"
                 app:iconGravity="textTop"
                 app:iconPadding="8dp"
                 app:iconSize="20dp"
                 app:iconTint="@null"
-                app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.rounded" />
+                app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.rounded"
+                app:strokeColor="#C63FFF"
+                app:strokeWidth="2dp" />
         </LinearLayout>
 
 

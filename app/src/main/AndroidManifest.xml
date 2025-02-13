@@ -15,60 +15,66 @@
         android:theme="@style/Theme.EtnVegas"
         tools:targetApi="31">
         <activity
-            android:name="com.electroneumhackathon.etnvegas.SlotGameResultActivity"
-            android:exported="false"
-            android:screenOrientation="portrait"/>
+            android:name=".FortuneWheelGameResultActivity"
+            android:exported="false" />
         <activity
-            android:name="com.electroneumhackathon.etnvegas.SlotGameActivity"
-            android:exported="false"
-            android:screenOrientation="portrait"/>
+            android:name=".PlayFortuneWheelGame"
+            android:exported="false" />
         <activity
-            android:name="com.electroneumhackathon.etnvegas.InstructionActivity"
+            android:name=".SlotGameResultActivity"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.electroneumhackathon.etnvegas.ChipBuyResultActivity"
+            android:name=".SlotGameActivity"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.electroneumhackathon.etnvegas.SwapResultActivity"
+            android:name=".InstructionActivity"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.electroneumhackathon.etnvegas.SwapTokenActivity"
+            android:name=".ChipBuyResultActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".SwapResultActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".SwapTokenActivity"
             android:exported="false"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.EtnVegas" />
         <activity
-            android:name="com.electroneumhackathon.etnvegas.ReceiveEthActivity"
+            android:name=".ReceiveEthActivity"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.electroneumhackathon.etnvegas.SendEthResultActivity"
+            android:name=".SendEthResultActivity"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.electroneumhackathon.etnvegas.SendEtherActivity"
+            android:name=".SendEtherActivity"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.electroneumhackathon.etnvegas.GenericErrorActivity"
+            android:name=".GenericErrorActivity"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.electroneumhackathon.etnvegas.LoginActivity"
+            android:name=".LoginActivity"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.electroneumhackathon.etnvegas.KeyGenerationActivity"
+            android:name=".KeyGenerationActivity"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.electroneumhackathon.etnvegas.RealLoginSignupButtonActivity"
+            android:name=".RealLoginSignupButtonActivity"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.electroneumhackathon.etnvegas.LoginSignupButtonActivity"
+            android:name=".LoginSignupButtonActivity"
             android:exported="true"
             android:screenOrientation="portrait">
             <intent-filter>
@@ -78,7 +84,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.electroneumhackathon.etnvegas.MainActivity"
+            android:name=".MainActivity"
             android:exported="false"
             android:screenOrientation="portrait" />
 

@@ -31,6 +31,7 @@ public class KeyGenerator {
     public static final String SPIN_RESULT_1 = "spin_result_1";
     public static final String SPIN_RESULT_2 = "spin_result_2";
     public static final String SPIN_RESULT_3 = "spin_result_3";
+    public static final String FORTUNE_WHEEL_LAST_RESULT = "fortune_wheel_last_result";
 
 
 
@@ -163,6 +164,16 @@ public class KeyGenerator {
         result[2] = sharedPreferences.getInt(SPIN_RESULT_3, 3);
 
         return result;
+    }
+
+    public void saveFortuneWheelResult(int a) {
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putInt(FORTUNE_WHEEL_LAST_RESULT, a);
+        editor.commit();
+    }
+
+    public int getLastFortuneWheelResult() {
+        return sharedPreferences.getInt(FORTUNE_WHEEL_LAST_RESULT, 1);
     }
 
     public String getSavedChips() {

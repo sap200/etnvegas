@@ -32,9 +32,10 @@ public class MainActivity extends AppCompatActivity {
         bottomNavigationView.setOnItemSelectedListener(item -> {
             Fragment fragment = null;
             if(item.getItemId() == R.id.nav_slot) {
-                // now redirect to main activity the initial activity ok loginsignupactivity.
-                Intent intent = new Intent(this, SlotGameActivity.class);
-                startActivity(intent);
+
+                // new logic -
+                // now I want to display list of games
+                fragment = new GamesListFragment();
             } else if (item.getItemId() == R.id.nav_wallet) {
                 fragment = new WalletFragment();
             } else if (item.getItemId() == R.id.nav_profile) {

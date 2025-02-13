@@ -2,8 +2,8 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:id="@+id/nav_slot"
-        android:icon="@drawable/casino"
-        android:title="slot" />
+        android:icon="@drawable/gambling"
+        android:title="games" />
     <item
         android:id="@+id/nav_buy_chips"
         android:icon="@drawable/shop"
