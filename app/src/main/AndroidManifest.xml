@@ -15,11 +15,20 @@
         android:theme="@style/Theme.EtnVegas"
         tools:targetApi="31">
         <activity
-            android:name=".FortuneWheelGameResultActivity"
+            android:name=".MysticDiceResultActivity"
             android:exported="false" />
         <activity
+            android:name=".PlayMysticDiceGame"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".FortuneWheelGameResultActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
             android:name=".PlayFortuneWheelGame"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".SlotGameResultActivity"
             android:exported="false"

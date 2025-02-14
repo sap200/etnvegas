@@ -44,7 +44,7 @@ import java.util.regex.Pattern;
 public class MyWeb3Client {
     private Web3j web3j;
     private static final String WEB3_RPC_PROVIDER = "https://rpc.ankr.com/electroneum_testnet/12ec0fbb73dde2bba66af4a7f50f036e17a19c90be52ff33a78976a15ad50229";
-    private static final String CONTRACT_ADDRESS = "0xB80d03c515Af087B788C4943AfECe5364f265d8A";
+    private static final String CONTRACT_ADDRESS = "0xF14C32214351a1926555C76FE07769dbA4561613";
     private KeyGenerator keyGenerator;
     private Etnvegas etnvegas;
     public static final String ERROR_OCCURED = "error";
@@ -426,6 +426,68 @@ public class MyWeb3Client {
                     // Extract event parameters for the specific event
                     EventValues eventValues = etnvegas.staticExtractEventParameters(
                             etnvegas.SPINRESULTOUT_EVENT, log
+                    );
+
+                    if(eventValues != null) {
+                        Address player = (Address) eventValues.getIndexedValues().get(0);
+                        Uint256 returnedChoice = (Uint256) eventValues.getNonIndexedValues().get(0);
+                        Uint256 returnedResult = (Uint256) eventValues.getNonIndexedValues().get(1);
+
+
+                        gameResult[0] = returnedChoice.getValue().toString();
+                        gameResult[1] = returnedResult.getValue().toString();
+                        gameResult[2] = "";
+                        gameResult[3] = txnReceipt.getTransactionHash();
+                        gameResult[4] = "";
+                        break;
+                    }
+
+                    return gameResult;
+
+                }
+
+            }
+
+        } catch(Exception ex) {
+            ex.printStackTrace();
+            System.out.println(ex.getMessage());
+            gameResult[2] = ERROR_OCCURED;
+            gameResult[3] = Utility.extractTxHashFromErrorMessage(ex.getMessage());
+            gameResult[4] = Utility.processTransactionFailure(ex.getMessage());
+        }
+        return gameResult;
+    }
+
+    public String[] rollADice(BigInteger betAmount, BigInteger choice) {
+        String[] gameResult = new String[5];
+
+        try {
+            Random random = new Random();
+
+            // Generate BigIntegers of a specific bit length
+            BigInteger src1 = new BigInteger(37, random); // 50-bit random BigInteger
+            // get gas Limit and price
+            BigInteger gasPrice = getGasPrice();
+            Transaction tx = Transaction.createFunctionCallTransaction(keyGenerator.getAddress(), null, null, null, CONTRACT_ADDRESS,  BigInteger.ZERO, etnvegas.rollADice(betAmount, choice, src1).encodeFunctionCall());
+            BigInteger gasLimit = predictGasLimit(tx);
+            etnvegas.setGasProvider(new StaticGasProvider(gasPrice, gasLimit));
+
+            TransactionReceipt txnReceipt = etnvegas.rollADice(betAmount, choice, src1).send();
+            if(!txnReceipt.isStatusOK()) {
+                // error
+                System.out.println("INSIDE TXN RECEIPT: " + txnReceipt);
+
+                gameResult[2] = ERROR_OCCURED;
+                gameResult[3] = txnReceipt.getTransactionHash();
+                gameResult[4] = txnReceipt.getRevertReason();
+                return gameResult;
+            } else {
+                // success
+                List<Log> logs = txnReceipt.getLogs();
+                for (Log log : logs) {
+                    // Extract event parameters for the specific event
+                    EventValues eventValues = etnvegas.staticExtractEventParameters(
+                            etnvegas.DICEROLLRESULTOUT_EVENT, log
                     );
 
                     if(eventValues != null) {

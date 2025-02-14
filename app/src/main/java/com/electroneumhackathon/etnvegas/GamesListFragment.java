@@ -30,6 +30,7 @@ public class GamesListFragment extends Fragment {
     private CardView slotMachine;
     private CardView fortuneWheel;
     private CardView europeanRoulette;
+    private CardView mysticDice;
 
     public GamesListFragment() {
         // Required empty public constructor
@@ -71,6 +72,8 @@ public class GamesListFragment extends Fragment {
         slotMachine = view.findViewById(R.id.casino_slot_machine);
         fortuneWheel = view.findViewById(R.id.casino_fortune_wheel);
         europeanRoulette = view.findViewById(R.id.roulette_game_casino);
+        mysticDice = view.findViewById(R.id.casino_dice_game);
+
 
         if(isAdded() && getActivity() != null) {
             // slot game redirection
@@ -82,6 +85,12 @@ public class GamesListFragment extends Fragment {
             // spin wheel game redirection
             fortuneWheel.setOnClickListener(e -> {
                 Intent intent = new Intent(getActivity(), PlayFortuneWheelGame.class);
+                startActivity(intent);
+            });
+
+            // dice game
+            mysticDice.setOnClickListener(e -> {
+                Intent intent = new Intent(getActivity(), PlayMysticDiceGame.class);
                 startActivity(intent);
             });
 
