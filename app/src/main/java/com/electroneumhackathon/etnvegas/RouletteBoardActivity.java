@@ -47,6 +47,7 @@ import java.util.Set;
 
 import cryptooperations.KeyGenerator;
 import cryptooperations.MyWeb3Client;
+import jnr.ffi.annotations.In;
 
 public class RouletteBoardActivity extends AppCompatActivity {
 
@@ -83,6 +84,7 @@ public class RouletteBoardActivity extends AppCompatActivity {
 
     private LottieAnimationView lottieAnimationView;
     private TextView rouletteBalanceView;
+    private Button goToWalletButton;
 
 
     @Override
@@ -103,6 +105,13 @@ public class RouletteBoardActivity extends AppCompatActivity {
         myWeb3Client = new MyWeb3Client(keyGenerator);
         lottieAnimationView = findViewById(R.id.fetch_lottie_animation_2);
         rouletteBalanceView = findViewById(R.id.roulette_balance_view);
+        goToWalletButton = findViewById(R.id.r_go_to_wallet);
+
+        goToWalletButton.setOnClickListener(e -> {
+            Intent walIntent = new Intent(RouletteBoardActivity.this, MainActivity.class);
+            startActivity(walIntent);
+            finish();
+        });
 
         new Thread(() -> {
             try {

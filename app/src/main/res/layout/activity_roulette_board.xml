@@ -69,9 +69,11 @@
         app:layout_constraintTop_toBottomOf="@+id/roulette_balance_view" />
 
     <android.widget.ScrollView
+        android:id="@+id/my_s_vi"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
+        android:contentDescription="This is roulette bet board"
         android:padding="12dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -80,9 +82,10 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="#0D5523"
+            android:gravity="center"
             android:orientation="vertical"
-            android:paddingBottom="150dp"
-            android:background="#0D5523">
+            android:paddingBottom="150dp">
 
             <GridLayout
                 android:id="@+id/my_board_grid"
@@ -90,16 +93,36 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center|center_horizontal"
                 android:columnCount="5"
-                android:padding="16dp"
                 android:horizontalSpacing="2dp"
-                android:verticalSpacing="2dp"
-                android:rowCount="14">
+                android:padding="16dp"
+                android:rowCount="14"
+                android:verticalSpacing="2dp">
 
             </GridLayout>
+
+            <Button
+                android:id="@+id/r_go_to_wallet"
+                android:layout_width="250dp"
+                android:layout_height="60dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginBottom="5dp"
+                android:backgroundTint="@android:color/transparent"
+                android:fontFamily="@font/marko_one"
+                android:text="Go to Wallet"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:strokeColor="#FAFAFA"
+                app:strokeWidth="2dp" />
         </LinearLayout>
 
 
     </android.widget.ScrollView>
+
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
