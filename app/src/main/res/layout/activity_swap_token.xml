@@ -32,7 +32,7 @@
         android:background="@drawable/slot_gradient_layout_background"
         android:fontFamily="@font/marko_one"
         android:gravity="center"
-        android:text="🌐  Network: Electroneum Testnet"
+        android:text="🌐  Network: Electroneum Mainnet"
         android:textColor="#FFFFFF"
         android:textSize="16sp"
         android:textStyle="bold"

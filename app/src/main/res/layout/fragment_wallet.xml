@@ -24,7 +24,7 @@
             android:fontFamily="@font/marko_one"
             android:gravity="center"
             android:padding="10dp"
-            android:text="🌐 Network: Electroneum Testnet"
+            android:text="🌐 Network: Electroneum Mainnet"
             android:textColor="#FFFFFF"
             android:textSize="14sp"
             android:textStyle="bold"

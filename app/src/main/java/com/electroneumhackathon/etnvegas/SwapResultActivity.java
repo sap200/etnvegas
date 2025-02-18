@@ -94,7 +94,7 @@ public class SwapResultActivity extends AppCompatActivity {
                     txnStatus.setText("Swap Failed");
                     txnStatus.setTextColor(Color.RED);
                     if(result[2] == null) {
-                        txnDetails.setText("Please tap on the transaction hash to copy it to the clipboard and check details in https://blockexplorer.thesecurityteam.rocks/");
+                        txnDetails.setText("Please tap on the transaction hash to copy it to the clipboard and check details in https://blockexplorer.electroneum.com/");
                     } else {
                         txnDetails.setText(result[2]);
                     }
@@ -116,7 +116,7 @@ public class SwapResultActivity extends AppCompatActivity {
                     lottieAnimationView.playAnimation();
                     txnStatus.setText("Swap Success");
                     txnStatus.setTextColor(Color.parseColor("#3aa832"));
-                    txnDetails.setText("Please tap on the transaction hash to copy it to the clipboard and check validity in https://blockexplorer.thesecurityteam.rocks/");
+                    txnDetails.setText("Please tap on the transaction hash to copy it to the clipboard and check validity in https://blockexplorer.electroneum.com/");
                     txnHash.setEnabled(true);
                     txnHash.setVisibility(View.VISIBLE);
                     txnHash.setText(result[1]);

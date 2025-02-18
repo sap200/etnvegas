@@ -117,7 +117,7 @@ public class ChipBuyResultActivity extends AppCompatActivity {
                     lottieAnimationView.playAnimation();
                     txnStatus.setText("Buy Success");
                     txnStatus.setTextColor(Color.parseColor("#3aa832"));
-                    txnDetails.setText("Please tap on the transaction hash to copy it to the clipboard and check validity in https://blockexplorer.thesecurityteam.rocks/");
+                    txnDetails.setText("Please tap on the transaction hash to copy it to the clipboard and check validity in https://blockexplorer.electroneum.com/");
                     txnHash.setEnabled(true);
                     txnHash.setVisibility(View.VISIBLE);
                     txnHash.setText(result[1]);
