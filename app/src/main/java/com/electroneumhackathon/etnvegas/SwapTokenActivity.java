@@ -82,6 +82,11 @@ public class SwapTokenActivity extends AppCompatActivity {
                 });
             } catch (Exception ex) {
                 ex.printStackTrace();
+                runOnUiThread(() -> {
+                    Intent intent = new Intent(SwapTokenActivity.this, GenericErrorActivity.class);
+                    startActivity(intent);
+                    finish();
+                });
             }
         }).start();
 

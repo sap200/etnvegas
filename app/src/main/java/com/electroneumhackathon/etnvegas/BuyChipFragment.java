@@ -103,25 +103,40 @@ public class BuyChipFragment extends Fragment {
         keyGenerator = new KeyGenerator(requireContext());
         myWeb3Client = new MyWeb3Client(keyGenerator);
         new Thread(() -> {
-            String chipBalance = myWeb3Client.getChipBalance();
-            BigInteger x1 = myWeb3Client.fetchEtherBalanceInBigInteger();
-            if(x1 != null) {
-                etherBalanceAvailable = x1;
-            }
-            BigInteger x2 = myWeb3Client.getBuyPricePerToken();
-            if(x2 != null) {
-                pricePerToken = x2;
-            }
-            if (isAdded() && getActivity() != null) {
-                requireActivity().runOnUiThread(() -> {
-                    lottieAnimationView.cancelAnimation();
-                    lottieAnimationView.setVisibility(View.GONE);
-                    chipBalanceTextView.setText("Available : " + chipBalance + " CHIP");
-                    // enable cards
-                    setEnableAllCards(true);
+            try {
+                String chipBalance = myWeb3Client.getChipBalance();
+                if(chipBalance == null) {
+                    throw new Exception("Got null chip balance");
+                }
+                BigInteger x1 = myWeb3Client.fetchEtherBalanceInBigInteger();
+                if (x1 != null) {
+                    etherBalanceAvailable = x1;
+                }
+                BigInteger x2 = myWeb3Client.getBuyPricePerToken();
+                if (x2 != null) {
+                    pricePerToken = x2;
+                }
+                if (isAdded() && getActivity() != null) {
+                    requireActivity().runOnUiThread(() -> {
+                        lottieAnimationView.cancelAnimation();
+                        lottieAnimationView.setVisibility(View.GONE);
+                        chipBalanceTextView.setText("Available : " + chipBalance + " CHIP");
+                        // enable cards
+                        setEnableAllCards(true);
 
-                });
+                    });
+                }
+            } catch(Exception ex) {
+                if (isAdded() && getActivity() != null) {
+                    requireActivity().runOnUiThread(() -> {
+                        Intent x = new Intent(requireActivity(), GenericErrorActivity.class);
+                        startActivity(x);
+                        requireActivity().finish();
+
+                    });
+                }
             }
+
         }).start();
 
         boolean[] isValid = new boolean[1];

@@ -80,25 +80,34 @@ public class SlotGameActivity extends AppCompatActivity {
         balanceView = findViewById(R.id.balance_view);
 
         new Thread(() -> {
-            BigInteger x = myWeb3Client.getChipBalanceInBigInteger();
-            if(x != null) {
-                chipBalance = x;
-            }
-           runOnUiThread(() -> {
-                balanceView.setText("\uD83E\uDE99 Balance : " + chipBalance + " CHIP");
-                lottieAnimationView.cancelAnimation();
-                lottieAnimationView.setVisibility(View.GONE);
-                if (chipBalance.equals(new BigInteger("0"))) {
-                    textView2.setText("Note: Please buy some chip !");
-                    textView2.setVisibility(View.VISIBLE);
-                    chipAmountText.setEnabled(false);
-                } else {
-                    textView2.setText("Note: Please do not quit this screen while spinning");
-                    textView2.setVisibility(View.VISIBLE);
-                    chipAmountText.setEnabled(true);
-                }
 
-           });
+            try {
+                BigInteger x = myWeb3Client.getChipBalanceInBigInteger();
+                if (x != null) {
+                    chipBalance = x;
+                }
+                runOnUiThread(() -> {
+                    balanceView.setText("\uD83E\uDE99 Balance : " + chipBalance + " CHIP");
+                    lottieAnimationView.cancelAnimation();
+                    lottieAnimationView.setVisibility(View.GONE);
+                    if (chipBalance.equals(new BigInteger("0"))) {
+                        textView2.setText("Note: Please buy some chip !");
+                        textView2.setVisibility(View.VISIBLE);
+                        chipAmountText.setEnabled(false);
+                    } else {
+                        textView2.setText("Note: Please do not quit this screen while spinning");
+                        textView2.setVisibility(View.VISIBLE);
+                        chipAmountText.setEnabled(true);
+                    }
+
+                });
+            } catch(Exception ex) {
+                runOnUiThread(() -> {
+                    Intent intent = new Intent(SlotGameActivity.this, GenericErrorActivity.class);
+                    startActivity(intent);
+                    finish();
+                });
+            }
 
         }).start();
 
