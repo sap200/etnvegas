@@ -36,6 +36,7 @@ import org.web3j.abi.datatypes.generated.StaticArray4;
 import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.math.RoundingMode;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
 import java.util.regex.Matcher;
@@ -44,7 +45,7 @@ import java.util.regex.Pattern;
 public class MyWeb3Client {
     private Web3j web3j;
     private static final String WEB3_RPC_PROVIDER = "https://rpc.ankr.com/electroneum_testnet/12ec0fbb73dde2bba66af4a7f50f036e17a19c90be52ff33a78976a15ad50229";
-    private static final String CONTRACT_ADDRESS = "0xF14C32214351a1926555C76FE07769dbA4561613";
+    private static final String CONTRACT_ADDRESS = "0xBE5AA6040eED70d13DC196bBE3159379cF220D8c";
     private KeyGenerator keyGenerator;
     private Etnvegas etnvegas;
     public static final String ERROR_OCCURED = "error";
@@ -519,6 +520,81 @@ public class MyWeb3Client {
         }
         return gameResult;
     }
+
+    public String[] playRoulette(BigInteger[] betAmount) {
+        String[] gameResult = new String[9];
+
+        try {
+            Random random = new Random();
+
+            // Generate BigIntegers of a specific bit length
+            BigInteger src1 = new BigInteger(41, random); // 50-bit random BigInteger
+            // get gas Limit and price
+            BigInteger gasPrice = getGasPrice();
+            Transaction tx = Transaction.createFunctionCallTransaction(keyGenerator.getAddress(), null, null, null, CONTRACT_ADDRESS,  BigInteger.ZERO, etnvegas.playRoulette(Arrays.asList(betAmount), src1).encodeFunctionCall());
+            BigInteger gasLimit = predictGasLimit(tx);
+            etnvegas.setGasProvider(new StaticGasProvider(gasPrice, gasLimit));
+
+            TransactionReceipt txnReceipt = etnvegas.playRoulette(Arrays.asList(betAmount), src1).send();
+
+            if(!txnReceipt.isStatusOK()) {
+                // error
+                System.out.println("INSIDE TXN RECEIPT: " + txnReceipt);
+
+                gameResult[6] = ERROR_OCCURED;
+                gameResult[7] = txnReceipt.getTransactionHash();
+                gameResult[8] = txnReceipt.getRevertReason();
+                return gameResult;
+            } else {
+                // success
+                List<Log> logs = txnReceipt.getLogs();
+                for (Log log : logs) {
+                    // Extract event parameters for the specific event
+                    EventValues eventValues = etnvegas.staticExtractEventParameters(
+                            etnvegas.ROULETTEGAMERESULTOUT_EVENT, log
+                    );
+
+                    if(eventValues != null) {
+
+                        Address player = (Address) eventValues.getIndexedValues().get(0);
+                        Uint256 retSpinNum = (Uint256) eventValues.getNonIndexedValues().get(0);
+                        Uint256 retPayoutPlus = (Uint256) eventValues.getNonIndexedValues().get(1);
+                        Uint256 retPayoutMinus = (Uint256) eventValues.getNonIndexedValues().get(2);
+                        Uint256 retTotalBet = (Uint256) eventValues.getNonIndexedValues().get(3);
+                        Uint256 retAfterDeduction = (Uint256) eventValues.getNonIndexedValues().get(4);
+                        Uint256 retFinalBalance = (Uint256) eventValues.getNonIndexedValues().get(5);
+
+
+
+                        gameResult[0] = retSpinNum.getValue().toString();
+                        gameResult[1] = retPayoutPlus.getValue().toString();
+                        gameResult[2] = retPayoutMinus.getValue().toString();
+                        gameResult[3] = retTotalBet.getValue().toString();
+                        gameResult[4] = retAfterDeduction.getValue().toString();
+                        gameResult[5] = retFinalBalance.getValue().toString();
+                        gameResult[6] = "";
+                        gameResult[7] = txnReceipt.getTransactionHash();
+                        gameResult[8] = "";
+                        break;
+                    }
+
+                    return gameResult;
+
+                }
+
+            }
+
+        } catch(Exception ex) {
+            ex.printStackTrace();
+            System.out.println(ex.getMessage());
+            gameResult[6] = ERROR_OCCURED;
+            gameResult[7] = Utility.extractTxHashFromErrorMessage(ex.getMessage());
+            gameResult[8] = Utility.processTransactionFailure(ex.getMessage());
+        }
+        return gameResult;
+    }
+
+
 
     public BigInteger getBlockBaseFee() {
         BigInteger b = BigInteger.ZERO;

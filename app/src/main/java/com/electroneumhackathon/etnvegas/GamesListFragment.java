@@ -95,6 +95,10 @@ public class GamesListFragment extends Fragment {
             });
 
             // roulette game redirection
+            europeanRoulette.setOnClickListener(e -> {
+                Intent intent = new Intent(getActivity(), RouletteBoardActivity.class);
+                startActivity(intent);
+            });
         }
 
         return view;

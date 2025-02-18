@@ -15,6 +15,17 @@
         android:theme="@style/Theme.EtnVegas"
         tools:targetApi="31">
         <activity
+            android:name=".PlayRouletteResultActivity"
+            android:exported="false" />
+        <activity
+            android:name=".RouletteWheelSpinActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".RouletteBoardActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
             android:name=".MysticDiceResultActivity"
             android:exported="false"
             android:screenOrientation="portrait" />
