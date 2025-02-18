@@ -44,8 +44,8 @@ import java.util.regex.Pattern;
 
 public class MyWeb3Client {
     private Web3j web3j;
-    private static final String WEB3_RPC_PROVIDER = "https://rpc.ankr.com/electroneum_testnet/12ec0fbb73dde2bba66af4a7f50f036e17a19c90be52ff33a78976a15ad50229";
-    private static final String CONTRACT_ADDRESS = "0xBE5AA6040eED70d13DC196bBE3159379cF220D8c";
+    private static final String WEB3_RPC_PROVIDER = "<<MAINNET_URL>>";
+    private static final String CONTRACT_ADDRESS = "0x90d07231FB279f560D297F9D973011C54a42302C";
     private KeyGenerator keyGenerator;
     private Etnvegas etnvegas;
     public static final String ERROR_OCCURED = "error";
@@ -59,7 +59,7 @@ public class MyWeb3Client {
     public MyWeb3Client(KeyGenerator keyGenerator) {
         this.keyGenerator = keyGenerator;
         web3j = Web3j.build(new HttpService(WEB3_RPC_PROVIDER.trim()));
-        chainId = BigInteger.valueOf(5201420);
+        chainId = BigInteger.valueOf(52014);
 
         TransactionManager txManager = new RawTransactionManager(web3j, keyGenerator.getCredentials(), chainId.longValue());
 

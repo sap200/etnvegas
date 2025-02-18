@@ -20,6 +20,7 @@ import org.web3j.utils.Convert;
 
 import java.math.BigInteger;
 import java.math.RoundingMode;
+import java.util.Arrays;
 
 import cryptooperations.KeyGenerator;
 import cryptooperations.MyWeb3Client;
