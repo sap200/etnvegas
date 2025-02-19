@@ -44,7 +44,7 @@ import java.util.regex.Pattern;
 
 public class MyWeb3Client {
     private Web3j web3j;
-    private static final String WEB3_RPC_PROVIDER = "<<TESTNET_RPC_URL_ANKR>>git";
+    private static final String WEB3_RPC_PROVIDER = "<<TESTNET_RPC_URL_ANKR>>";
     private static final String CONTRACT_ADDRESS = "0xBE5AA6040eED70d13DC196bBE3159379cF220D8c";
     private KeyGenerator keyGenerator;
     private Etnvegas etnvegas;
