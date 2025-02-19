@@ -44,7 +44,7 @@ import java.util.regex.Pattern;
 
 public class MyWeb3Client {
     private Web3j web3j;
-    private static final String WEB3_RPC_PROVIDER = "<<MAINNET_URL>>";
+    private static final String WEB3_RPC_PROVIDER = "https://rpc.ankr.com/electroneum/12ec0fbb73dde2bba66af4a7f50f036e17a19c90be52ff33a78976a15ad50229";
     private static final String CONTRACT_ADDRESS = "0x90d07231FB279f560D297F9D973011C54a42302C";
     private KeyGenerator keyGenerator;
     private Etnvegas etnvegas;
